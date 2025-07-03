@@ -417,54 +417,70 @@ export default function Home() {const [darkMode, setDarkMode] = useState(false)
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <form className="space-y-6 bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
-                  <div>
-                    <Input
-                      type="text"
-                      placeholder="Your Name"
-                      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200"
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder="Your Email"
-                      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200"
-                    />
-                  </div>
-                  <div>
-                    <Textarea
-                      rows={5}
-                      placeholder="Your Message"
-                      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200 resize-none"
-                    />
-                  </div>
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                      Send Message
-                      <Send className="ml-2 h-5 w-5" />
-                    </Button>
-                  </motion.div>
-                </form>
-              </motion.div>
-            </div>
-          </div>
-        </motion.section>
+                <form
+  action="https://formspree.io/f/mwpbzwad" 
+  method="POST"
+  className="space-y-6 bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg"
+>
+  <div>
+    <Input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required
+      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200"
+    />
+  </div>
 
-        {/* Footer */}
-        <footer className="py-12 border-t border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-gray-600 dark:text-gray-300"
-            >
-              © 2025 Syeda Areeba Shah
-            </motion.p>
-          </div>
-        </footer>
+  <div>
+    <Input
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      required
+      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200"
+    />
+  </div>
+
+  <div>
+    <Textarea
+      name="message"
+      rows={5}
+      placeholder="Your Message"
+      required
+      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-blue-500 dark:focus:border-blue-400 transition-colors duration-200 resize-none"
+    />
+  </div>
+    
+
+  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+    <Button
+      type="submit"
+      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+    >
+      Send Message
+      <Send className="ml-2 h-5 w-5" />
+    </Button>
+  </motion.div>
+        </form>
+      </motion.div>
+    </div>
+  </div>
+</motion.section>
+{/* Footer */}
+<footer className="py-12 border-t border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    <motion.p
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="text-gray-600 dark:text-gray-300"
+    >
+      © 2025 Syeda Areeba Shah
+    </motion.p>
+  </div>
+</footer>
 
     </div>
   );
